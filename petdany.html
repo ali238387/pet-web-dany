@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PetStar - Reciclaje de PET</title>
+  <link rel="stylesheet" href="petdany.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+    }
+
+    header {
+      background-color: #1565C0;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+      flex-wrap: wrap;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .header-left img {
+      width: 60px;
+    }
+
+    .header-left h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 20px;
+      padding: 5px 10px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      padding: 5px 10px;
+      border-radius: 20px;
+    }
+
+    .search-box button {
+      background: #0D47A1;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin-left: 5px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      background: #eee;
+      padding: 10px;
+      justify-content: center;
+      gap: 20px;
+      margin: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1565C0;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    main h2, h3 {
+      color: #0D47A1;
+    }
+
+    main p, ol, ul {
+      font-size: 1.1rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    ul li, ol li {
+      margin-bottom: 12px;
+    }
+
+    mark {
+      background-color: yellow;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      background: #eee;
+      padding: 20px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <img src="https://materialesecologicos.es/wp-content/uploads/2019/06/tereftalato-de-polietileno.png" alt="Logo de PetStar">
+      <h1>PET-RECICLAJE</h1>
+    </div>
+    <div class="search-box">
+      <input type="text" id="busqueda" placeholder="Buscar...">
+      <button onclick="buscarTexto()">Buscar</button>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="inicio.html">Inicio</a></li>
+      <li><a href="causas.html">Causas</a></li>
+      <li><a href="consecuencias.html">Consecuencias</a></li>
+      <li><a href="datos.html">Datos Curiosos</a></li>
+    </ul>
+  </nav>
+
+  <main id="contenido">
+    <h2>¿Qué es el PET y por qué es importante reciclarlo?</h2>
+    <p>
+      El PET (tereftalato de polietileno) es un plástico muy utilizado en envases como botellas, textiles y empaques. Su ligereza, transparencia y resistencia lo hacen ideal para muchas industrias, pero también generan una gran cantidad de residuos.
+    </p>
+
+    <h3>Proceso de reciclaje del PET</h3>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;">
+  <ol style="flex: 1; min-width: 280px;">
+    <li><strong>Recolección:</strong> Se recogen botellas y productos PET.</li>
+    <li><strong>Clasificación:</strong> Se separa de otros residuos y se eliminan etiquetas.</li>
+    <li><strong>Limpieza:</strong> Lavado para eliminar residuos.</li>
+    <li><strong>Triturado:</strong> El PET se convierte en pequeñas escamas.</li>
+    <li><strong>Reprocesamiento:</strong> Se funde y transforma en nuevos productos.</li>
+  </ol>
+
+  <img src="https://th.bing.com/th/id/OIP.EBf5TML13qvZwZ9eddzszAHaED?w=322&h=180&c=7&r=0&o=5&pid=1.7"
+       alt="Proceso PET"
+       style="width: 350px; border-radius: 8px; flex-shrink: 0;" />
+</div>
+   
+    <h3>Beneficios del reciclaje del PET</h3>
+    <ul>
+      <li>🌱 Reduce la contaminación ambiental.</li>
+      <li>💧 Ahorra recursos como agua y petróleo.</li>
+      <li>🏭 Disminuye la emisión de gases de efecto invernadero.</li>
+      <li>👷 Genera empleos en la economía circular.</li>
+      <li>🔁 Promueve hábitos sostenibles.</li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>&copy; PET-RECICLAJE</p>
+  </footer>
+
+<script>
+  function buscarTexto() {
+    const input = document.getElementById('busqueda');
+    const textoBuscado = input.value.trim().toLowerCase();
+    const contenido = document.getElementById('contenido');
+
+    if (!textoBuscado) {
+      alert("Por favor, escribe una palabra para buscar.");
+      return;
+    }
+
+    
+    const rutas = {
+      "inicio": "inicio.html",
+      "causas": "causas.html",
+      "consecuencias": "consecuencias.html",
+      "datos": "datos.html",
+      "pet": "inicio.html"
+    };
+
+   
+    if (rutas[textoBuscado]) {
+      window.location.href = rutas[textoBuscado];
+      return;
+    }
+
+    
+    const marcasPrevias = contenido.querySelectorAll('mark');
+    marcasPrevias.forEach(m => {
+      m.replaceWith(document.createTextNode(m.textContent));
+    });
+
+   
+    const textoPlano = contenido.textContent.toLowerCase();
+    if (!textoPlano.includes(textoBuscado)) {
+      alert("No se encontraron coincidencias en esta página.");
+      return;
+    }
+    const htmlOriginal = contenido.innerHTML;
+    const regex = new RegExp(`(${textoBuscado})`, 'gi');
+    contenido.innerHTML = htmlOriginal.replace(regex, '<mark>$1</mark>');
+
+    input.value = "";
+  }
+</script>
+
+  </script>
+</body>
+</html>
